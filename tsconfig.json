@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es6",
     "target": "esnext",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "noImplicitAny": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowJs": true
   },
   "exclude": [
     "node_modules"

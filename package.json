@@ -9,7 +9,8 @@
     "build:prod": "webpack --env mode=production",
     "build:analyzer": "webpack --env mode=production analyzer=true",
     "build:mobile": "webpack --env mode=production platform=mobile",
-    "build:desktop": "webpack --env mode=production platform=desktop"
+    "build:desktop": "webpack --env mode=production platform=desktop",
+    "lint": "eslint -c eslintrc.json config/** src/** public/**"
   },
   "keywords": [],
   "author": "",

@@ -13,11 +13,13 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "allowUmdGlobalAccess": true
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules"
   ],
+  "include": ["global.d.ts", "eslintrc.json"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

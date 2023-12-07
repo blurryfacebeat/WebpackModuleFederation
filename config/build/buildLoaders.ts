@@ -23,6 +23,9 @@ export const buildLoaders = (options: BuildOptions): ModuleOptions['rules'] => {
         loader: 'css-loader',
         options: {
           sourceMap: isDev,
+          modules: {
+            localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]',
+          },
         },
       },
       {

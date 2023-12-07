@@ -12,7 +12,8 @@
     "moduleResolution": "Node",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowUmdGlobalAccess": true
   },
   "exclude": [
     "node_modules"

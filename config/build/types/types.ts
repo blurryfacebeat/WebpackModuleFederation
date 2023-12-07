@@ -2,7 +2,7 @@ export type BuildPaths = {
   entry: string;
   html: string;
   output: string;
-  resolveAlias: string;
+  src: string;
 };
 
 export type BuildMode = 'production' | 'development';

@@ -8,7 +8,7 @@ export const buildResolvers = (
 
   return {
     alias: {
-      '@': paths.resolveAlias,
+      '@': paths.src,
     },
     extensions: ['.tsx', '.ts', '.js'],
   };

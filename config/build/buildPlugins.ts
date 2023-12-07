@@ -10,6 +10,8 @@ import { type BuildOptions } from './types/types';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import path from 'path';
+import CopyPlugin from 'copy-webpack-plugin';
 
 export const buildPlugins = (
   options: BuildOptions,
@@ -22,6 +24,7 @@ export const buildPlugins = (
   const plugins: Configuration['plugins'] = [
     new HtmlWebpackPlugin({
       template: paths.html,
+      favicon: path.resolve(paths.public, 'favicon.ico'),
     }),
     new ProvidePlugin({
       React: 'react',
@@ -41,6 +44,14 @@ export const buildPlugins = (
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
         chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(paths.public, 'locales'),
+            to: path.resolve(paths.output, 'locales'),
+          },
+        ],
       }),
     );
   }

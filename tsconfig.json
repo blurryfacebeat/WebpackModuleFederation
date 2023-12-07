@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "target": "esnext",
+    "module": "ESNext",
+    "target": "ESNext",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
@@ -9,10 +9,17 @@
     },
     "noImplicitAny": true,
     "jsx": "react",
-    "moduleResolution": "node",
-    "allowJs": true
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }

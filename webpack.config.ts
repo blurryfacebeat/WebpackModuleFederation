@@ -1,9 +1,24 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import { type Configuration as DevServerConfiguration } from 'webpack-dev-server';
 
-module.exports = (env) => {
-  return {
+type Mode = 'production' | 'development';
+
+type Env = {
+  mode: Mode;
+  port: number;
+};
+
+export default (env: Env) => {
+  const isDev = env.mode === 'development';
+
+  const devServer: DevServerConfiguration = {
+    port: env.port || 3000,
+    open: true,
+  };
+
+  const config: webpack.Configuration = {
     mode: env.mode ?? 'development',
     resolve: {
       alias: {
@@ -23,8 +38,8 @@ module.exports = (env) => {
         template: path.resolve(__dirname, 'public', 'index.html'),
       }),
       // Показывает прогресс сборки в процентах
-      new webpack.ProgressPlugin(),
-    ],
+      isDev && new webpack.ProgressPlugin(),
+    ].filter(Boolean),
     module: {
       rules: [
         {
@@ -34,5 +49,9 @@ module.exports = (env) => {
         },
       ],
     },
+    devtool: isDev && 'inline-source-map',
+    devServer: isDev ? devServer : undefined,
   };
+
+  return config;
 };

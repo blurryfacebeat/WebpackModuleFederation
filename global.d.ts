@@ -18,3 +18,5 @@ declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
 declare module '*.gif';
+
+declare const ENV_PLATFORM: 'mobile' | 'desktop';

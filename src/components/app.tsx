@@ -7,6 +7,7 @@ import ReactLogoSvg from '@/assets/img/react_svg.svg';
 const App: FC = () => {
   return (
     <>
+      <div>{ENV_PLATFORM}</div>
       <img src={ReactLogoPng} width={50} height={50} alt="" />
       <img src={ReactLogoJpeg} width={50} height={50} alt="" />
       <ReactLogoSvg width={100} height={100} color="green" />

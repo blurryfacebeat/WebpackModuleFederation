@@ -11,4 +11,5 @@ export type BuildOptions = {
   port: number;
   paths: BuildPaths;
   mode: BuildMode;
+  analyzer?: boolean;
 };

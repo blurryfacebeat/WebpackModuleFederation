@@ -10,7 +10,7 @@ const App: FC = () => {
       <div>{ENV_PLATFORM}</div>
       <img src={ReactLogoPng} width={50} height={50} alt="" />
       <img src={ReactLogoJpeg} width={50} height={50} alt="" />
-      <ReactLogoSvg width={100} height={100} color="green" />
+      <ReactLogoSvg width={100} height={100} color="black" />
       <nav>
         <ul>
           <li>

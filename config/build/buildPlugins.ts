@@ -9,6 +9,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { type BuildOptions } from './types/types';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 export const buildPlugins = (
   options: BuildOptions,
@@ -32,7 +33,7 @@ export const buildPlugins = (
   ];
 
   if (isDev) {
-    plugins.push(new ProgressPlugin());
+    plugins.push(new ProgressPlugin(), new ReactRefreshPlugin());
   }
 
   if (isProd) {
